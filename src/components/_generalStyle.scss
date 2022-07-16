@@ -1,0 +1,36 @@
+@mixin flexContanier {
+  display: flex;
+  align-items: center;
+}
+
+@mixin textStyle(
+  $size,
+  $weight,
+  $family,
+  $lineHeight,
+  $letterSpacing,
+  $textColor,
+  $textTransform
+) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  color: $textColor;
+  text-transform: $textTransform;
+}
+
+@mixin exploreMoreCircle(
+  $circleHeight,
+  $circleWidth,
+  $circleRadius,
+  $circleBackgroundColor
+) {
+  height: $circleHeight;
+  width: $circleWidth;
+  border-radius: $circleRadius;
+  background: $circleBackgroundColor;
+  @include flexContanier();
+  cursor: pointer;
+}

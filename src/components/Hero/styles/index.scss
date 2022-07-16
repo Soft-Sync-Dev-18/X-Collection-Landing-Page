@@ -1,0 +1,169 @@
+@import "../../generalStyle";
+
+.hero_section {
+  background-image: url("../../../../public/images/heroBackground.png");
+  background-size: cover;
+  height: 100vh;
+
+  .hero_section_conatainer {
+    @include flexContanier();
+    width: 90%;
+    margin: auto;
+
+    @media (max-width: 1060px) {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1060px) {
+    height: auto;
+  }
+
+  .hero_section_one {
+    flex: 1;
+
+    @media (max-width: 1060px) {
+      @include flexContanier();
+      flex-direction: column;
+      margin: 30px 0 0;
+    }
+
+    @media (max-width: 600px) {
+      align-items: flex-start;
+    }
+
+    h1 {
+      @include textStyle(56px,
+        400,
+        "Playfair Display",
+        67.2px,
+        2%,
+        white,
+        capitalize);
+
+      @media (max-width: 600px) {
+        font-size: 30px;
+      }
+
+      margin: 0;
+
+      span {
+        @include textStyle(64px,
+          600,
+          "Playfair Display",
+          76.8px,
+          6%,
+          #552fb9,
+          capitalize);
+        display: block;
+
+        @media (max-width: 600px) {
+          font-size: 44px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    p {
+      @include textStyle(16px, 400, "Montserrat", 150%, 0, white, initial);
+      margin-top: 20px;
+    }
+
+    .explore_btn_container {
+      @include flexContanier();
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none
+      }
+
+      p {
+        @include textStyle(18px,
+          500,
+          "Playfair Display",
+          135%,
+          0.02rem,
+          white,
+          capitalize);
+        margin: 0;
+      }
+
+      .first_circle {
+        @include exploreMoreCircle(50px, 50px, 50%, rgba(157, 115, 238, 0.3));
+        justify-content: center;
+        margin-left: 8px;
+      }
+
+      .second_circle {
+        @include exploreMoreCircle(40px, 40px, 50%, rgba(157, 115, 238, 0.5));
+        justify-content: center;
+      }
+
+      .third_circle {
+        @include exploreMoreCircle(28px, 28px, 50%, #9d73ee);
+        justify-content: center;
+      }
+
+      .mainIcon_circle {
+        @include flexContanier();
+        padding: 8px;
+      }
+    }
+  }
+
+  .hero_section_two {
+    flex: 2;
+    position: relative;
+
+    img {
+      display: flex;
+      margin-left: auto;
+
+      @media (max-width: 600px) {
+        // height: 400px;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .depth_container {
+    position: absolute;
+    top: 84px;
+    display: flex;
+    right: 530px;
+
+    img {
+      &:first-child {
+        transform: translateX(23px);
+      }
+    }
+
+    @media (max-width: 1060px) {
+      display: none;
+    }
+  }
+
+  .line_one {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .line_two {
+    position: absolute;
+    right: 57px;
+    top: 36%;
+  }
+
+  .draw_lines {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .spiral_lines {
+    position: absolute;
+    right: 452px;
+    bottom: 20px;
+  }
+}
